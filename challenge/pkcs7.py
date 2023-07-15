@@ -6,9 +6,9 @@ import time
 
 from Crypto.Cipher import AES
 
-cookiefile = open("cookie", "r").read().strip()
-flag = open("flag", "r").read().strip()
-key = open("key", "rb").read().strip().encode('hex')
+cookiefile = open("challenge/cookie", "r").read().strip()
+flag = open("challenge/flag", "r").read().strip()
+key = open("challenge/key", "rb").read().strip().encode('hex')
 
 welcome = """
 Welcome to Secure Encryption Service version 1.51

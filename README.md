@@ -1,15 +1,32 @@
-we want to have the following decrypted message:
+# Background
 
-{"username": "admin", "expires": "3017-01-01", "is_admin": "true"}
+I wanted to solve the picoCTF-2018 "Magic Padding Oracle" challenge.
+All available resources online gives us the `challenge/pkcs7.py` server file, but not the `key, cookie, flag` files that are necessary in order for the challenge to work.
+I decided to generate my own files, after I generted some random key.
+The script that does it is `my_ctf_setup.py`
 
-in hexhexlify()'ed bytes, this is the message:
 
-7b22757365726e616d65223a202261646d696e222c202265787069726573223a2022333031372d30312d3031222c202269735f61646d696e223a202274727565227d
 
-splitted into 16 bytes chunks, we get:
+# Solution
 
-7b22757365726e616d65223a20226164    <-------------------- DECRYPTED BLOCK 0
-6d696e222c202265787069726573223a    <-------------------- DECRYPTED BLOCK 1
-2022333031372d30312d3031222c2022    <-------------------- DECRYPTED BLOCK 2
-69735f61646d696e223a202274727565    <-------------------- DECRYPTED BLOCK 3
-227d                                <-------------------- DECRYPTED BLOCK 4
+```python
+python3 sol.py
+```
+
+gives us the final payload:
+
+```html
+ea8496c0be8f66f232b0587923cec8787454e2327def953e61ae4d898a15e90029238adbc9bb409d2b2d8282dafb237e91f661ee1b3d5a3feeac7b544e3cac3f41414141414141414141414141414141
+```
+
+and indeed we get the correct output:
+
+```bash
+What is your cookie?
+ea8496c0be8f66f232b0587923cec8787454e2327def953e61ae4d898a15e90029238adbc9bb409d2b2d8282dafb237e91f661ee1b3d5a3feeac7b544e3cac3f41414141414141414141414141414141
+username: admin
+Admin? true
+Cookie is not expired
+The flag is: picoCTF{0r4cl3s_c4n_l34k_86bb783e}
+```
+
