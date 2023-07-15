@@ -1,9 +1,9 @@
 # Background
 
-I wanted to solve the picoCTF-2018 "Magic Padding Oracle" challenge.
-All available resources online gives us the `challenge/pkcs7.py` server file, but not the `key, cookie, flag` files that are necessary in order for the challenge to work.
-I decided to generate my own files, after I generted some random key.
-The script that does it is `my_ctf_setup.py`
+I wanted to solve the picoCTF-2018 "Magic Padding Oracle" challenge.<br />
+All available resources online gives us the `challenge/pkcs7.py` server file, but not the `key, cookie, flag` files that are necessary in order for the challenge to work.<br />
+I decided to generate my own files, after I generted some random key.<br />
+The script that does it is `my_ctf_setup.py`<br />
 
 
 
